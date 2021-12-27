@@ -1,0 +1,91 @@
+﻿@model Bansach.Models.HOADONBANLE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HOADONBANLE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaydat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaydat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaygiao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaygiao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hotennguoinhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hotennguoinhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diachinhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diachinhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDTnguoinhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTnguoinhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trangthai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trangthai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tongtien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tongtien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHANVIEN.Hoten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHANVIEN.Hoten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.Matkhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.Matkhau)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Idhdbl }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

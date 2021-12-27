@@ -1,0 +1,11 @@
+﻿@using Bansach.Models;
+@model List<LOAISACH>
+
+<ul class="tg-themetabnav" role="tablist">
+    @foreach (var item in Model)
+    {
+        <li role="presentation" class="active">
+            <a href="#artandphotography" aria-controls="artandphotography" role="tab" data-toggle="tab">@item.Tenloaisach</a>
+        </li>
+    }
+</ul>

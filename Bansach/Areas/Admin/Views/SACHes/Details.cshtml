@@ -1,0 +1,144 @@
+﻿@model Bansach.Models.SACH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+<div class="header-advance-area">
+    <div class="breadcome-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcome-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="icon nalika-home"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>QUẢN LÝ LOẠI SÁCH</h2>
+                                        <p>Welcome to book library <span class="bread-ntd">admin template</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="breadcomb-report">
+                                    <button data-toggle="tooltip" data-placement="left" title="download report" class="btn"><i class="icon nalika-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="product-status mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>XEM LOẠI SÁCH</h4>
+
+                    <div>
+                        <table>
+                            <tr>
+                                <th>Tựa sách</th>
+                                <th>Giới thiệu sách</th>
+                                <th>Khối lượng</th>
+                                <th>Ngôn ngữ</th>
+                                <th>Người dịch</th>
+                                <th>Kích thước</th>
+                                <th>Số lượng</th>
+                                <th>Ngày phát hành</th>
+                                <th>Số trang</th>
+                                <th>Giá gốc</th>
+                                <th>Giảm giá</th>
+                                <th>Giá bán</th>
+                                <th>Mô tả ngắn</th>
+                                <th>Hình ảnh</th>
+                                <th>Mã sách</th>
+                                <th>Tên danh mục</th>
+                                <th>Nhà xuất bản</th>
+                                <th></th>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.Tuasach)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Gioithieusach)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Khoiluong)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Ngonngu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Nguoidich)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Kichthuoc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Soluong)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Ngayphathanh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Sotrang)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Giaban)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Giagoc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Giamgia)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Motangan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Hinhanh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Masach)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.DANHMUC.Tendanhmuc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.NHAXUATBAN.Ten)
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                    <div class="product-tab-list tab-pane fade active in" id="description">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="text-center custom-pro-edt-ds">
+                                    <button type="button" class="btn btn-ctl-bt waves-effect waves-light">
+                                        <div>
+                                            @Html.ActionLink("Quay lại", "Index")
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

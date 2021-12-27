@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Bán_SáchEntities">
+    <EntitySetMapping Name="CHITIETDATHANGs">
+      <EntityTypeMapping TypeName="Model.CHITIETDATHANG">
+        <MappingFragment StoreEntitySet="CHITIETDATHANG">
+          <ScalarProperty Name="Idsach" ColumnName="Idsach" />
+          <ScalarProperty Name="Idddh" ColumnName="Idddh" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+          <ScalarProperty Name="Thanhtien" ColumnName="Thanhtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHITIETHDBLs">
+      <EntityTypeMapping TypeName="Model.CHITIETHDBL">
+        <MappingFragment StoreEntitySet="CHITIETHDBL">
+          <ScalarProperty Name="Idsach" ColumnName="Idsach" />
+          <ScalarProperty Name="Idhdbl" ColumnName="Idhdbl" />
+          <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Thanhtien" ColumnName="Thanhtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHITIETHOADONs">
+      <EntityTypeMapping TypeName="Model.CHITIETHOADON">
+        <MappingFragment StoreEntitySet="CHITIETHOADON">
+          <ScalarProperty Name="Idhd" ColumnName="Idhd" />
+          <ScalarProperty Name="Idsach" ColumnName="Idsach" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+          <ScalarProperty Name="Thanhtien" ColumnName="Thanhtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DANHGIAs">
+      <EntityTypeMapping TypeName="Model.DANHGIA">
+        <MappingFragment StoreEntitySet="DANHGIA">
+          <ScalarProperty Name="Iduser" ColumnName="Iduser" />
+          <ScalarProperty Name="Idsach" ColumnName="Idsach" />
+          <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+          <ScalarProperty Name="Thoigian" ColumnName="Thoigian" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DANHMUCs">
+      <EntityTypeMapping TypeName="Model.DANHMUC">
+        <MappingFragment StoreEntitySet="DANHMUC">
+          <ScalarProperty Name="Iddanhmuc" ColumnName="Iddanhmuc" />
+          <ScalarProperty Name="Idloaisach" ColumnName="Idloaisach" />
+          <ScalarProperty Name="Tendanhmuc" ColumnName="Tendanhmuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DONDATHANGs">
+      <EntityTypeMapping TypeName="Model.DONDATHANG">
+        <MappingFragment StoreEntitySet="DONDATHANG">
+          <ScalarProperty Name="Idddh" ColumnName="Idddh" />
+          <ScalarProperty Name="Idnhanvien" ColumnName="Idnhanvien" />
+          <ScalarProperty Name="Idnhacungcap" ColumnName="Idnhacungcap" />
+          <ScalarProperty Name="Ngaydat" ColumnName="Ngaydat" />
+          <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
+          <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOADONs">
+      <EntityTypeMapping TypeName="Model.HOADON">
+        <MappingFragment StoreEntitySet="HOADON">
+          <ScalarProperty Name="Idhd" ColumnName="Idhd" />
+          <ScalarProperty Name="Idnhanvien" ColumnName="Idnhanvien" />
+          <ScalarProperty Name="Ngaygiao" ColumnName="Ngaygiao" />
+          <ScalarProperty Name="Idddh" ColumnName="Idddh" />
+          <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOADONBANLEs">
+      <EntityTypeMapping TypeName="Model.HOADONBANLE">
+        <MappingFragment StoreEntitySet="HOADONBANLE">
+          <ScalarProperty Name="Idhdbl" ColumnName="Idhdbl" />
+          <ScalarProperty Name="Idnhanvien" ColumnName="Idnhanvien" />
+          <ScalarProperty Name="Iduser" ColumnName="Iduser" />
+          <ScalarProperty Name="Ngaydat" ColumnName="Ngaydat" />
+          <ScalarProperty Name="Ngaygiao" ColumnName="Ngaygiao" />
+          <ScalarProperty Name="Hotennguoinhan" ColumnName="Hotennguoinhan" />
+          <ScalarProperty Name="Diachinhan" ColumnName="Diachinhan" />
+          <ScalarProperty Name="SDTnguoinhan" ColumnName="SDTnguoinhan" />
+          <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+          <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIENHEs">
+      <EntityTypeMapping TypeName="Model.LIENHE">
+        <MappingFragment StoreEntitySet="LIENHE">
+          <ScalarProperty Name="Idlienhe" ColumnName="Idlienhe" />
+          <ScalarProperty Name="Ho" ColumnName="Ho" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAINVs">
+      <EntityTypeMapping TypeName="Model.LOAINV">
+        <MappingFragment StoreEntitySet="LOAINV">
+          <ScalarProperty Name="Idloainhanvien" ColumnName="Idloainhanvien" />
+          <ScalarProperty Name="Tenloai" ColumnName="Tenloai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAISACHes">
+      <EntityTypeMapping TypeName="Model.LOAISACH">
+        <MappingFragment StoreEntitySet="LOAISACH">
+          <ScalarProperty Name="Idloaisach" ColumnName="Idloaisach" />
+          <ScalarProperty Name="Tenloaisach" ColumnName="Tenloaisach" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHACUNGCAPs">
+      <EntityTypeMapping TypeName="Model.NHACUNGCAP">
+        <MappingFragment StoreEntitySet="NHACUNGCAP">
+          <ScalarProperty Name="IdNCC" ColumnName="IdNCC" />
+          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="Model.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="Idnhanvien" ColumnName="Idnhanvien" />
+          <ScalarProperty Name="Idloainhanvien" ColumnName="Idloainhanvien" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Tendangnhap" ColumnName="Tendangnhap" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHAXUATBANs">
+      <EntityTypeMapping TypeName="Model.NHAXUATBAN">
+        <MappingFragment StoreEntitySet="NHAXUATBAN">
+          <ScalarProperty Name="IdNXB" ColumnName="IdNXB" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHOMSACHes">
+      <EntityTypeMapping TypeName="Model.NHOMSACH">
+        <MappingFragment StoreEntitySet="NHOMSACH">
+          <ScalarProperty Name="Idnhomsach" ColumnName="Idnhomsach" />
+          <ScalarProperty Name="Tennhomsach" ColumnName="Tennhomsach" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SACHes">
+      <EntityTypeMapping TypeName="Model.SACH">
+        <MappingFragment StoreEntitySet="SACH">
+          <ScalarProperty Name="Idsach" ColumnName="Idsach" />
+          <ScalarProperty Name="IdNXB" ColumnName="IdNXB" />
+          <ScalarProperty Name="Iddanhmuc" ColumnName="Iddanhmuc" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Tuasach" ColumnName="Tuasach" />
+          <ScalarProperty Name="Gioithieusach" ColumnName="Gioithieusach" />
+          <ScalarProperty Name="Khoiluong" ColumnName="Khoiluong" />
+          <ScalarProperty Name="Ngayphathanh" ColumnName="Ngayphathanh" />
+          <ScalarProperty Name="Ngonngu" ColumnName="Ngonngu" />
+          <ScalarProperty Name="Nguoidich" ColumnName="Nguoidich" />
+          <ScalarProperty Name="Kichthuoc" ColumnName="Kichthuoc" />
+          <ScalarProperty Name="Sotrang" ColumnName="Sotrang" />
+          <ScalarProperty Name="Giagoc" ColumnName="Giagoc" />
+          <ScalarProperty Name="Giamgia" ColumnName="Giamgia" />
+          <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+          <ScalarProperty Name="Motangan" ColumnName="Motangan" />
+          <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+          <ScalarProperty Name="Masach" ColumnName="Masach" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TACGIAs">
+      <EntityTypeMapping TypeName="Model.TACGIA">
+        <MappingFragment StoreEntitySet="TACGIA">
+          <ScalarProperty Name="Idtacgia" ColumnName="Idtacgia" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TINTUCs">
+      <EntityTypeMapping TypeName="Model.TINTUC">
+        <MappingFragment StoreEntitySet="TINTUC">
+          <ScalarProperty Name="Idtintuc" ColumnName="Idtintuc" />
+          <ScalarProperty Name="Tieude" ColumnName="Tieude" />
+          <ScalarProperty Name="Thoigiandang" ColumnName="Thoigiandang" />
+          <ScalarProperty Name="Noidungtomtat" ColumnName="Noidungtomtat" />
+          <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERs">
+      <EntityTypeMapping TypeName="Model.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="Iduser" ColumnName="Iduser" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
+          <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+          <ScalarProperty Name="Taikhoan" ColumnName="Taikhoan" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SACHTHUOCTACGIA" TypeName="Model.SACHTHUOCTACGIA" StoreEntitySet="SACHTHUOCTACGIA">
+      <EndProperty Name="SACH">
+        <ScalarProperty Name="Idsach" ColumnName="Idsach" />
+      </EndProperty>
+      <EndProperty Name="TACGIA">
+        <ScalarProperty Name="Idtacgia" ColumnName="Idtacgia" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

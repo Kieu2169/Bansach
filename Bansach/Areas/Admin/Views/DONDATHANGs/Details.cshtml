@@ -1,0 +1,59 @@
+﻿@model Bansach.Models.DONDATHANG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DONDATHANG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaydat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaydat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tongtien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tongtien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trangthai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trangthai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHACUNGCAP.TenNCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHACUNGCAP.TenNCC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHANVIEN.Hoten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHANVIEN.Hoten)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Idddh }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

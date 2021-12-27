@@ -1,0 +1,125 @@
+﻿@model Bansach.Models.USER
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div class="row justify-content-md-center" style="display:flex;
+justify-content:center; ">
+    <div class="col-md-4" style="height: 700px; width: 430px; margin-top: 50px; margin-bottom: 50px; position: relative; display: flex; justify-content: center; flex-direction: column; padding: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 5px; ">
+        <div class="card">
+            <div class="card-header">
+                <h2 style="margin-top: 10px; margin-left: 150px; color: #5f923a">ĐĂNG KÝ</h2>
+            </div>
+            <hr />
+            <div class="card-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div style="margin-bottom: 20px;">
+                        <span style="color:red;margin-left:70px">Các trường có dấu * là bắt buộc nhập</span>
+                    </div>
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="col-md-10" style="width: 300px; margin-left: 70px;">
+                                @Html.EditorFor(model => model.Hoten, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập họ tên...*" } })
+                                @Html.ValidationMessageFor(model => model.Hoten, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10" style="width: 300px; margin-left: 70px;">
+                                @Html.EditorFor(model => model.Taikhoan, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập tên tài khoản...*" } })
+                                @Html.ValidationMessageFor(model => model.Taikhoan, "", new { @class = "text-danger" })
+                                @if (ViewBag.error != null)
+                                {
+                                    <span class="badge badge-danger">@ViewBag.error</span>
+                                }
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10" style="width: 300px; margin-left: 70px;">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập Email...*" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10" style="width: 300px; margin-left: 70px;">
+                                <div>
+                                    <span class="show"> @Html.EditorFor(model => model.Matkhau, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập mật khẩu...*", @type = "password" } })</span>
+                                    <span><img src="~/Content/images/eye-2520039-2116156.png" id="password" class="button" onclick="showHidden()" /></span>
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Matkhau, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10" style="width: 300px; margin-left: 70px;">
+                                <select class="form-control" id="Gioitinh" name="Gioitinh">
+                                    <option>Chọn giới tính</option>
+                                    <option>Nam</option>
+                                    <option>Nữ</option>
+                                </select>
+                                @Html.ValidationMessageFor(model => model.Gioitinh, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10" style="width: 300px; margin-left: 70px;">
+                                @Html.EditorFor(model => model.Ngaysinh, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập ngày sinh..." } })
+                                @Html.ValidationMessageFor(model => model.Ngaysinh, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10" style="width: 300px; margin-left: 70px;">
+                                @Html.EditorFor(model => model.Diachi, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập địa chỉ..." } })
+                                @Html.ValidationMessageFor(model => model.Diachi, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input style="background-color: #5f923a; margin-left: 130px; border: #5f923a " type="submit" value="Đăng ký" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .button{
+        display: block;
+        position:absolute;
+        top:8px;
+        right:20px;
+        width:21px;
+    }
+    span img{
+        cursor:pointer;
+    }
+    .show{
+        position:relative;
+    }
+</style>
+<script>
+    isBool = true;
+    function showHidden() {
+        if (isBool) {
+            document.getElementById("Matkhau").setAttribute("type", "text");
+            isBool = false;
+        }
+        else {
+            document.getElementById("Matkhau").setAttribute("type", "password");
+            isBool = true;
+        }
+    }
+</script>

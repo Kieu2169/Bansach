@@ -1,0 +1,51 @@
+﻿@model Bansach.Models.HOADON
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HOADON</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaygiao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaygiao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tongtien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tongtien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DONDATHANG.Tongtien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONDATHANG.Tongtien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHANVIEN.Hoten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHANVIEN.Hoten)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Idhd }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

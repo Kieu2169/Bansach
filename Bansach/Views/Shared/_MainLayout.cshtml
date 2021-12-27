@@ -1,0 +1,383 @@
+﻿
+@{
+    ViewBag.Title = "_MainLayout";
+}
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Book Library</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- google fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/normalize.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/icomoon.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/css/transitions.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="~/Content/css/color.css" rel="stylesheet" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" />
+    <script src="~/Content/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body class="tg-home tg-homeone">
+
+    <div id="tg-wrapper" class="tg-wrapper tg-haslayout">
+        <!--************************************
+                Header Start
+        *************************************-->
+        <header id="tg-header" class="tg-header tg-haslayout">
+            <div class="tg-topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <ul class="tg-addnav">
+                                <li>
+                                    <a href="@Url.Action("Index","Contact")">
+                                        <i class="icon-envelope"></i>
+                                        <em>Liên hệ</em>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tg-userlogin">
+                                @if (Session["Iduser"] != null)
+                                {
+                                    @*<span ><i class="fas fa-user"></i></span>*@
+
+                                    <a style="margin-left: 20px; font-size: 15px" href="@Url.Action("Logout","Home")">Đăng xuất</a>
+                                }
+                                else
+                                {
+                                    <a style="font-size:15px" href="@Url.Action("Login","Home")">Đăng nhập</a>
+                                    <a style="margin-left:20px; font-size:15px" href="@Url.Action("Register","Home")">Đăng ký</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tg-middlecontainer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <strong class="tg-logo"><a href="@Url.Action("Index","Home")"><img src="~/Content/images/logo.png" alt="company name here"></a></strong>
+                            <div class="tg-wishlistandcart">
+                                <div class="dropdown tg-themedropdown tg-wishlistdropdown">
+                                    <a href="javascript:void(0);" id="tg-wishlisst" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="tg-themebadge">3</span>
+                                        <i class="icon-heart"></i>
+                                        <span>Wishlist</span>
+                                    </a>
+                                    <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-wishlisst">
+                                        <div class="tg-description"><p>No products were added to the wishlist!</p></div>
+                                    </div>
+                                </div>
+                                <div class="dropdown tg-themedropdown tg-minicartdropdown">
+                                    <a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="tg-themebadge">3</span>
+                                        <i class="icon-cart"></i>
+                                        <span>$123.00</span>
+                                    </a>
+                                    <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
+                                        <div class="tg-minicartbody">
+                                            <div class="tg-minicarproduct">
+                                                <figure>
+                                                    <img src="~/Content/images/products/img-01.jpg" alt="image description">
+
+                                                </figure>
+                                                <div class="tg-minicarproductdata">
+                                                    <h5><a href="javascript:void(0);">Our State Fair Is A Great Function</a></h5>
+                                                    <h6><a href="javascript:void(0);">$ 12.15</a></h6>
+                                                </div>
+                                            </div>
+                                            <div class="tg-minicarproduct">
+                                                <figure>
+                                                    <img src="~/Content/images/products/img-02.jpg" alt="image description">
+
+                                                </figure>
+                                                <div class="tg-minicarproductdata">
+                                                    <h5><a href="javascript:void(0);">Bring Me To Light</a></h5>
+                                                    <h6><a href="javascript:void(0);">$ 12.15</a></h6>
+                                                </div>
+                                            </div>
+                                            <div class="tg-minicarproduct">
+                                                <figure>
+                                                    <img src="~/Content/images/products/img-03.jpg" alt="image description">
+
+                                                </figure>
+                                                <div class="tg-minicarproductdata">
+                                                    <h5><a href="javascript:void(0);">Have Faith In Your Soul</a></h5>
+                                                    <h6><a href="javascript:void(0);">$ 12.15</a></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tg-minicartfoot">
+                                            <a class="tg-btnemptycart" href="javascript:void(0);">
+                                                <i class="fa fa-trash-o"></i>
+                                                <span>Clear Your Cart</span>
+                                            </a>
+                                            <span class="tg-subtotal">Subtotal: <strong>35.78</strong></span>
+                                            <div class="tg-btns">
+                                                <a class="tg-btn tg-active" href="javascript:void(0);">View Cart</a>
+                                                <a class="tg-btn" href="javascript:void(0);">Checkout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tg-searchbox">
+                                <form class="tg-formtheme tg-formsearch">
+                                    <fieldset>
+                                        <input type="text" name="search" class="typeahead form-control" placeholder="Tìm kiếm theo tiêu đề...">
+                                        <button type="submit"><i class="icon-magnifier"></i></button>
+                                    </fieldset>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tg-navigationarea">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <nav id="tg-nav" class="tg-nav">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
+                                    <ul>
+                                        <li class="menu-item-has-children menu-item-has-mega-menu">
+                                            <a href="javascript:void(0);">Tất cả danh mục</a>
+                                            <div class="mega-menu">
+                                                @Html.Action("Loaisachpartial", "Sachpartial")
+
+                                                @Html.Action("Danhmucpartial", "Danhmucpartial")
+                                            </div>
+                                        </li>
+                                        <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                                        <li><a href="@Url.Action("Index","Author")">Tác giả</a></li>
+                                        <li><a href="@Url.Action("Index","Bestselling")">Sách bán chạy</a></li>
+                                        <li class="menu-item-has-children">
+                                            <a href="javascript:void(0);">Latest News</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="newslist.html">News List</a></li>
+                                                <li><a href="newsgrid.html">News Grid</a></li>
+                                                <li><a href="newsdetail.html">News Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children current-menu-item">
+                                            <a href="javascript:void(0);"><i class="icon-menu"></i></a>
+                                            <ul class="sub-menu">
+
+                                                <li><a href="@Url.Action("Index","Contact")">Liên hệ</a></li>
+                                                <li><a href="@Url.Action("Index","About")">Giới thiệu</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        @RenderBody()
+        <!--************************************
+                Header End
+        *************************************-->
+        <!--************************************
+                Footer Start
+        *************************************-->
+        <footer id="tg-footer" class="tg-footer tg-haslayout">
+            <div class="tg-footerarea">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <ul class="tg-clientservices">
+                                <li class="tg-devlivery">
+                                    <span class="tg-clientserviceicon"><i class="icon-rocket"></i></span>
+                                    <div class="tg-titlesubtitle">
+                                        <h3>Giao hàng nhanh</h3>
+                                        <p>Vận chuyển trên khắp Việt Nam</p>
+                                    </div>
+                                </li>
+                                <li class="tg-discount">
+                                    <span class="tg-clientserviceicon"><i class="icon-tag"></i></span>
+                                    <div class="tg-titlesubtitle">
+                                        <h3>Giá hợp lý</h3>
+                                        <p>Giá cả cạnh tranh nhất thị trường</p>
+                                    </div>
+                                </li>
+                                <li class="tg-quality">
+                                    <span class="tg-clientserviceicon"><i class="icon-leaf"></i></span>
+                                    <div class="tg-titlesubtitle">
+                                        <h3>Đảm bảo chất lượng</h3>
+                                        <p>Quy trình kiểm tra nghiêm ngặt</p>
+                                    </div>
+                                </li>
+                                <li class="tg-support">
+                                    <span class="tg-clientserviceicon"><i class="icon-heart"></i></span>
+                                    <div class="tg-titlesubtitle">
+                                        <h3>Hỗ trợ quý khách 24/7</h3>
+                                        <p>Phục vụ mọi khoảnh khắc</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tg-threecolumns">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <div class="tg-footercol">
+                                    <strong class="tg-logo"><a href="javascript:void(0);"><img src="~/Content/images/flogo.png" alt="image description"></a></strong>
+                                    <ul class="tg-contactinfo">
+                                        <li>
+                                            <i class="icon-apartment"></i>
+                                            <address>Bàu Cát 4, quận Tân Bình, Thành phố Hồ Chí Minh</address>
+                                        </li>
+                                        <li>
+                                            <i class="icon-phone-handset"></i>
+                                            <span>
+                                                <em>02899886425</em>
+                                                <em>0983649421</em>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <i class="icon-clock"></i>
+                                            <span>Phục vụ 7 ngày trong tuần từ 9h sáng - 5h chiều</span>
+                                        </li>
+                                        <li>
+                                            <i class="icon-envelope"></i>
+                                            <span>
+                                                <em><a href="mailto:kieuvo060921@gmail.com">kieuvo060921@gmail.com</a></em>
+                                                <em><a href="mailto:thanhkieuvo0609@gmail.com">kbook@gmail.com</a></em>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <ul class="tg-socialicons">
+                                        <li class="tg-facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="tg-twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="tg-linkedin"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                                        <li class="tg-googleplus"><a href="https://www.youtube.com/"><i class="fa fa-youtube-square"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <div class="tg-footercol tg-widget tg-widgetnavigation">
+                                    <div class="tg-widgettitle">
+                                        <h3>Thông tin trợ giúp</h3>
+                                    </div>
+                                    <div class="tg-widgetcontent">
+                                        <ul>
+                                            <li><a href="javascript:void(0);">Điều khoản sử dụng</a></li>
+                                            <li><a href="javascript:void(0);">Điều khoản bán hàng</a></li>
+                                            <li><a href="javascript:void(0);">Liên hệ chúng tôi</a></li>
+                                            <li><a href="javascript:void(0);">Câu chuyện của chúng tôi</a></li>
+                                            <li><a href="javascript:void(0);">Chính sách bảo mật</a></li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <div class="tg-footercol tg-widget tg-widgettopsellingauthors">
+                                    <div class="tg-widgettitle">
+                                        <h3>Tác giả có sách bán chạy nhất</h3>
+                                    </div>
+                                    <div class="tg-widgetcontent">
+                                        <ul>
+                                            <li>
+                                                <figure><a href="javascript:void(0);"><img src="~/Content/images/author/imag-09.jpg" alt="image description"></a></figure>
+                                                <div class="tg-authornamebooks">
+                                                    <h4><a href="javascript:void(0);">Jude Morphew</a></h4>
+                                                    <p>21,658 Published Books</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure><a href="javascript:void(0);"><img src="~/Content/images/author/imag-10.jpg" alt="image description"></a></figure>
+                                                <div class="tg-authornamebooks">
+                                                    <h4><a href="javascript:void(0);">Shaun Humes</a></h4>
+                                                    <p>20,257 Published Books</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure><a href="javascript:void(0);"><img src="~/Content/images/author/imag-11.jpg" alt="image description"></a></figure>
+                                                <div class="tg-authornamebooks">
+                                                    <h4><a href="javascript:void(0);">Kathrine Culbertson</a></h4>
+                                                    <p>15,686 Published Books</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tg-newsletter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <h4>Bản tin đăng ký!</h4>
+                            <h5>Hãy đăng ký để nhận được những thông tin về sách mới sớm nhất nhé!</h5>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <form class="tg-formtheme tg-formnewsletter">
+                                <fieldset>
+                                    <input type="email" name="email" class="form-control" placeholder="Enter Your Email ID">
+                                    <button type="button"><i class="icon-envelope"></i></button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tg-footerbar">
+                <a id="tg-btnbacktotop" class="tg-btnbacktotop" href="javascript:void(0);"><i class="icon-chevron-up"></i></a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <span class="tg-copyright" style="display: flex; justify-content: center;  important">Copyright © 2021 Book Library</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--************************************
+                Footer End
+        *************************************-->
+    </div>
+    <!--************************************
+            Wrapper End
+    *************************************-->
+    <script src="~/Content/js/vendor/jquery-library.js"></script>
+    <script src="~/Content/js/vendor/bootstrap.min.js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCR-KEWAVCn52mSdeVeTqZjtqbmVJyfSus&amp;language=en"></script>
+    <script src="~/Content/js/parallax.js"></script>
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <script src="~/Content/js/jquery.vide.min.js"></script>
+    <script src="~/Content/js/jquery-ui.js"></script>
+    <script src="~/Content/js/gmap3.js"></script>
+    <script src="~/Content/js/countTo.js"></script>
+    <script src="~/Content/js/countdown.js"></script>
+    <script src="~/Content/js/appear.js"></script>
+
+</body>
+
+</html>

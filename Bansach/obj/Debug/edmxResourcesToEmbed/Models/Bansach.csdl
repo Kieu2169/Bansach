@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHITIETDATHANG">
+    <Key>
+      <PropertyRef Name="Idsach" />
+      <PropertyRef Name="Idddh" />
+    </Key>
+    <Property Name="Idsach" Type="Int32" Nullable="false" />
+    <Property Name="Idddh" Type="Int32" Nullable="false" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Dongia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Thanhtien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DONDATHANG" Relationship="Self.FK_CHITIETDATHANG_DONDATHANG" FromRole="CHITIETDATHANG" ToRole="DONDATHANG" />
+    <NavigationProperty Name="SACH" Relationship="Self.FK_CHITIETDATHANG_SACH" FromRole="CHITIETDATHANG" ToRole="SACH" />
+  </EntityType>
+  <EntityType Name="CHITIETHDBL">
+    <Key>
+      <PropertyRef Name="Idsach" />
+      <PropertyRef Name="Idhdbl" />
+    </Key>
+    <Property Name="Idsach" Type="Int32" Nullable="false" />
+    <Property Name="Idhdbl" Type="Int32" Nullable="false" />
+    <Property Name="Giaban" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Thanhtien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOADONBANLE" Relationship="Self.FK_CHITIETHDBL_HOADONBANLE" FromRole="CHITIETHDBL" ToRole="HOADONBANLE" />
+    <NavigationProperty Name="SACH" Relationship="Self.FK_CHITIETHDBL_SACH" FromRole="CHITIETHDBL" ToRole="SACH" />
+  </EntityType>
+  <EntityType Name="CHITIETHOADON">
+    <Key>
+      <PropertyRef Name="Idhd" />
+      <PropertyRef Name="Idsach" />
+    </Key>
+    <Property Name="Idhd" Type="Int32" Nullable="false" />
+    <Property Name="Idsach" Type="Int32" Nullable="false" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Dongia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Thanhtien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOADON" Relationship="Self.FK_CHITIETHOADON_HOADON" FromRole="CHITIETHOADON" ToRole="HOADON" />
+    <NavigationProperty Name="SACH" Relationship="Self.FK_CHITIETHOADON_SACH" FromRole="CHITIETHOADON" ToRole="SACH" />
+  </EntityType>
+  <EntityType Name="DANHGIA">
+    <Key>
+      <PropertyRef Name="Iduser" />
+      <PropertyRef Name="Idsach" />
+    </Key>
+    <Property Name="Iduser" Type="Int32" Nullable="false" />
+    <Property Name="Idsach" Type="Int32" Nullable="false" />
+    <Property Name="Noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Thoigian" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="SACH" Relationship="Self.FK_DANHGIA_SACH" FromRole="DANHGIA" ToRole="SACH" />
+    <NavigationProperty Name="USER" Relationship="Self.FK_DANHGIA_USER" FromRole="DANHGIA" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="DANHMUC">
+    <Key>
+      <PropertyRef Name="Iddanhmuc" />
+    </Key>
+    <Property Name="Iddanhmuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idloaisach" Type="Int32" />
+    <Property Name="Tendanhmuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LOAISACH" Relationship="Self.FK_DANHMUC_LOAISACH" FromRole="DANHMUC" ToRole="LOAISACH" />
+    <NavigationProperty Name="SACHes" Relationship="Self.FK_SACH_DANHMUC" FromRole="DANHMUC" ToRole="SACH" />
+  </EntityType>
+  <EntityType Name="DONDATHANG">
+    <Key>
+      <PropertyRef Name="Idddh" />
+    </Key>
+    <Property Name="Idddh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idnhanvien" Type="Int32" />
+    <Property Name="Idnhacungcap" Type="Int32" />
+    <Property Name="Ngaydat" Type="DateTime" Precision="0" />
+    <Property Name="Tongtien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trangthai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CHITIETDATHANGs" Relationship="Self.FK_CHITIETDATHANG_DONDATHANG" FromRole="DONDATHANG" ToRole="CHITIETDATHANG" />
+    <NavigationProperty Name="NHACUNGCAP" Relationship="Self.FK_DONDATHANG_NHACUNGCAP" FromRole="DONDATHANG" ToRole="NHACUNGCAP" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_DONDATHANG_NHANVIEN" FromRole="DONDATHANG" ToRole="NHANVIEN" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_DONDATHANG" FromRole="DONDATHANG" ToRole="HOADON" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="Idhd" />
+    </Key>
+    <Property Name="Idhd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idnhanvien" Type="Int32" />
+    <Property Name="Ngaygiao" Type="DateTime" Precision="0" />
+    <Property Name="Idddh" Type="Int32" />
+    <Property Name="Tongtien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.FK_CHITIETHOADON_HOADON" FromRole="HOADON" ToRole="CHITIETHOADON" />
+    <NavigationProperty Name="DONDATHANG" Relationship="Self.FK_HOADON_DONDATHANG" FromRole="HOADON" ToRole="DONDATHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="HOADON" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="HOADONBANLE">
+    <Key>
+      <PropertyRef Name="Idhdbl" />
+    </Key>
+    <Property Name="Idhdbl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idnhanvien" Type="Int32" />
+    <Property Name="Iduser" Type="Int32" />
+    <Property Name="Ngaydat" Type="DateTime" Precision="0" />
+    <Property Name="Ngaygiao" Type="DateTime" Precision="0" />
+    <Property Name="Hotennguoinhan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Diachinhan" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SDTnguoinhan" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Trangthai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tongtien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CHITIETHDBLs" Relationship="Self.FK_CHITIETHDBL_HOADONBANLE" FromRole="HOADONBANLE" ToRole="CHITIETHDBL" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_HOADONBANLE_NHANVIEN" FromRole="HOADONBANLE" ToRole="NHANVIEN" />
+    <NavigationProperty Name="USER" Relationship="Self.FK_HOADONBANLE_USER" FromRole="HOADONBANLE" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="LIENHE">
+    <Key>
+      <PropertyRef Name="Idlienhe" />
+    </Key>
+    <Property Name="Idlienhe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LOAINV">
+    <Key>
+      <PropertyRef Name="Idloainhanvien" />
+    </Key>
+    <Property Name="Idloainhanvien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tenloai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NHANVIENs" Relationship="Self.FK_NHANVIEN_LOAINV" FromRole="LOAINV" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="LOAISACH">
+    <Key>
+      <PropertyRef Name="Idloaisach" />
+    </Key>
+    <Property Name="Idloaisach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tenloaisach" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DANHMUCs" Relationship="Self.FK_DANHMUC_LOAISACH" FromRole="LOAISACH" ToRole="DANHMUC" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="IdNCC" />
+    </Key>
+    <Property Name="IdNCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" />
+    <NavigationProperty Name="DONDATHANGs" Relationship="Self.FK_DONDATHANG_NHACUNGCAP" FromRole="NHACUNGCAP" ToRole="DONDATHANG" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="Idnhanvien" />
+    </Key>
+    <Property Name="Idnhanvien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idloainhanvien" Type="Int32" />
+    <Property Name="Hoten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="Tendangnhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Matkhau" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="DONDATHANGs" Relationship="Self.FK_DONDATHANG_NHANVIEN" FromRole="NHANVIEN" ToRole="DONDATHANG" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="NHANVIEN" ToRole="HOADON" />
+    <NavigationProperty Name="HOADONBANLEs" Relationship="Self.FK_HOADONBANLE_NHANVIEN" FromRole="NHANVIEN" ToRole="HOADONBANLE" />
+    <NavigationProperty Name="LOAINV" Relationship="Self.FK_NHANVIEN_LOAINV" FromRole="NHANVIEN" ToRole="LOAINV" />
+  </EntityType>
+  <EntityType Name="NHAXUATBAN">
+    <Key>
+      <PropertyRef Name="IdNXB" />
+    </Key>
+    <Property Name="IdNXB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SACHes" Relationship="Self.FK_SACH_NHAXUATBAN" FromRole="NHAXUATBAN" ToRole="SACH" />
+  </EntityType>
+  <EntityType Name="NHOMSACH">
+    <Key>
+      <PropertyRef Name="Idnhomsach" />
+    </Key>
+    <Property Name="Idnhomsach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tennhomsach" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SACH">
+    <Key>
+      <PropertyRef Name="Idsach" />
+    </Key>
+    <Property Name="Idsach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdNXB" Type="Int32" />
+    <Property Name="Iddanhmuc" Type="Int32" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Tuasach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gioithieusach" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Khoiluong" Type="Int32" />
+    <Property Name="Ngayphathanh" Type="DateTime" Precision="0" />
+    <Property Name="Ngonngu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoidich" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Kichthuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sotrang" Type="Int32" />
+    <Property Name="Giagoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Giamgia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Giaban" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Motangan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Hinhanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Masach" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="CHITIETDATHANGs" Relationship="Self.FK_CHITIETDATHANG_SACH" FromRole="SACH" ToRole="CHITIETDATHANG" />
+    <NavigationProperty Name="CHITIETHDBLs" Relationship="Self.FK_CHITIETHDBL_SACH" FromRole="SACH" ToRole="CHITIETHDBL" />
+    <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.FK_CHITIETHOADON_SACH" FromRole="SACH" ToRole="CHITIETHOADON" />
+    <NavigationProperty Name="DANHGIAs" Relationship="Self.FK_DANHGIA_SACH" FromRole="SACH" ToRole="DANHGIA" />
+    <NavigationProperty Name="DANHMUC" Relationship="Self.FK_SACH_DANHMUC" FromRole="SACH" ToRole="DANHMUC" />
+    <NavigationProperty Name="NHAXUATBAN" Relationship="Self.FK_SACH_NHAXUATBAN" FromRole="SACH" ToRole="NHAXUATBAN" />
+    <NavigationProperty Name="TACGIAs" Relationship="Self.SACHTHUOCTACGIA" FromRole="SACH" ToRole="TACGIA" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TACGIA">
+    <Key>
+      <PropertyRef Name="Idtacgia" />
+    </Key>
+    <Property Name="Idtacgia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hoten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Hinhanh" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="SACHes" Relationship="Self.SACHTHUOCTACGIA" FromRole="TACGIA" ToRole="SACH" />
+  </EntityType>
+  <EntityType Name="TINTUC">
+    <Key>
+      <PropertyRef Name="Idtintuc" />
+    </Key>
+    <Property Name="Idtintuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tieude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Thoigiandang" Type="DateTime" Precision="0" />
+    <Property Name="Noidungtomtat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Hinhanh" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="Iduser" />
+    </Key>
+    <Property Name="Iduser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Matkhau" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hoten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Gioitinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Ngaysinh" Type="DateTime" Precision="0" />
+    <Property Name="Taikhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DANHGIAs" Relationship="Self.FK_DANHGIA_USER" FromRole="USER" ToRole="DANHGIA" />
+    <NavigationProperty Name="HOADONBANLEs" Relationship="Self.FK_HOADONBANLE_USER" FromRole="USER" ToRole="HOADONBANLE" />
+  </EntityType>
+  <Association Name="FK_CHITIETDATHANG_DONDATHANG">
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="1" />
+    <End Role="CHITIETDATHANG" Type="Self.CHITIETDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATHANG">
+        <PropertyRef Name="Idddh" />
+      </Principal>
+      <Dependent Role="CHITIETDATHANG">
+        <PropertyRef Name="Idddh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETDATHANG_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
+    <End Role="CHITIETDATHANG" Type="Self.CHITIETDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="Idsach" />
+      </Principal>
+      <Dependent Role="CHITIETDATHANG">
+        <PropertyRef Name="Idsach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETHDBL_HOADONBANLE">
+    <End Role="HOADONBANLE" Type="Self.HOADONBANLE" Multiplicity="1" />
+    <End Role="CHITIETHDBL" Type="Self.CHITIETHDBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADONBANLE">
+        <PropertyRef Name="Idhdbl" />
+      </Principal>
+      <Dependent Role="CHITIETHDBL">
+        <PropertyRef Name="Idhdbl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETHDBL_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
+    <End Role="CHITIETHDBL" Type="Self.CHITIETHDBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="Idsach" />
+      </Principal>
+      <Dependent Role="CHITIETHDBL">
+        <PropertyRef Name="Idsach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETHOADON_HOADON">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+    <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="Idhd" />
+      </Principal>
+      <Dependent Role="CHITIETHOADON">
+        <PropertyRef Name="Idhd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETHOADON_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
+    <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="Idsach" />
+      </Principal>
+      <Dependent Role="CHITIETHOADON">
+        <PropertyRef Name="Idsach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DANHGIA_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
+    <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="Idsach" />
+      </Principal>
+      <Dependent Role="DANHGIA">
+        <PropertyRef Name="Idsach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DANHGIA_USER">
+    <End Role="USER" Type="Self.USER" Multiplicity="1" />
+    <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="Iduser" />
+      </Principal>
+      <Dependent Role="DANHGIA">
+        <PropertyRef Name="Iduser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DANHMUC_LOAISACH">
+    <End Role="LOAISACH" Type="Self.LOAISACH" Multiplicity="0..1" />
+    <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAISACH">
+        <PropertyRef Name="Idloaisach" />
+      </Principal>
+      <Dependent Role="DANHMUC">
+        <PropertyRef Name="Idloaisach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_DANHMUC">
+    <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="0..1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DANHMUC">
+        <PropertyRef Name="Iddanhmuc" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="Iddanhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONDATHANG_NHACUNGCAP">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="0..1" />
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="IdNCC" />
+      </Principal>
+      <Dependent Role="DONDATHANG">
+        <PropertyRef Name="Idnhacungcap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONDATHANG_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="Idnhanvien" />
+      </Principal>
+      <Dependent Role="DONDATHANG">
+        <PropertyRef Name="Idnhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADON_DONDATHANG">
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="0..1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATHANG">
+        <PropertyRef Name="Idddh" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="Idddh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADON_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="Idnhanvien" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="Idnhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONBANLE_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="HOADONBANLE" Type="Self.HOADONBANLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="Idnhanvien" />
+      </Principal>
+      <Dependent Role="HOADONBANLE">
+        <PropertyRef Name="Idnhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONBANLE_USER">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="HOADONBANLE" Type="Self.HOADONBANLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="Iduser" />
+      </Principal>
+      <Dependent Role="HOADONBANLE">
+        <PropertyRef Name="Iduser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHANVIEN_LOAINV">
+    <End Role="LOAINV" Type="Self.LOAINV" Multiplicity="0..1" />
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAINV">
+        <PropertyRef Name="Idloainhanvien" />
+      </Principal>
+      <Dependent Role="NHANVIEN">
+        <PropertyRef Name="Idloainhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_NHAXUATBAN">
+    <End Role="NHAXUATBAN" Type="Self.NHAXUATBAN" Multiplicity="0..1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAXUATBAN">
+        <PropertyRef Name="IdNXB" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="IdNXB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SACHTHUOCTACGIA">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <End Role="TACGIA" Type="Self.TACGIA" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Bán_SáchEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHITIETDATHANGs" EntityType="Self.CHITIETDATHANG" />
+    <EntitySet Name="CHITIETHDBLs" EntityType="Self.CHITIETHDBL" />
+    <EntitySet Name="CHITIETHOADONs" EntityType="Self.CHITIETHOADON" />
+    <EntitySet Name="DANHGIAs" EntityType="Self.DANHGIA" />
+    <EntitySet Name="DANHMUCs" EntityType="Self.DANHMUC" />
+    <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
+    <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+    <EntitySet Name="HOADONBANLEs" EntityType="Self.HOADONBANLE" />
+    <EntitySet Name="LIENHEs" EntityType="Self.LIENHE" />
+    <EntitySet Name="LOAINVs" EntityType="Self.LOAINV" />
+    <EntitySet Name="LOAISACHes" EntityType="Self.LOAISACH" />
+    <EntitySet Name="NHACUNGCAPs" EntityType="Self.NHACUNGCAP" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="NHAXUATBANs" EntityType="Self.NHAXUATBAN" />
+    <EntitySet Name="NHOMSACHes" EntityType="Self.NHOMSACH" />
+    <EntitySet Name="SACHes" EntityType="Self.SACH" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TACGIAs" EntityType="Self.TACGIA" />
+    <EntitySet Name="TINTUCs" EntityType="Self.TINTUC" />
+    <EntitySet Name="USERs" EntityType="Self.USER" />
+    <AssociationSet Name="FK_CHITIETDATHANG_DONDATHANG" Association="Self.FK_CHITIETDATHANG_DONDATHANG">
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+      <End Role="CHITIETDATHANG" EntitySet="CHITIETDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETDATHANG_SACH" Association="Self.FK_CHITIETDATHANG_SACH">
+      <End Role="SACH" EntitySet="SACHes" />
+      <End Role="CHITIETDATHANG" EntitySet="CHITIETDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETHDBL_HOADONBANLE" Association="Self.FK_CHITIETHDBL_HOADONBANLE">
+      <End Role="HOADONBANLE" EntitySet="HOADONBANLEs" />
+      <End Role="CHITIETHDBL" EntitySet="CHITIETHDBLs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETHDBL_SACH" Association="Self.FK_CHITIETHDBL_SACH">
+      <End Role="SACH" EntitySet="SACHes" />
+      <End Role="CHITIETHDBL" EntitySet="CHITIETHDBLs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETHOADON_HOADON" Association="Self.FK_CHITIETHOADON_HOADON">
+      <End Role="HOADON" EntitySet="HOADONs" />
+      <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETHOADON_SACH" Association="Self.FK_CHITIETHOADON_SACH">
+      <End Role="SACH" EntitySet="SACHes" />
+      <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DANHGIA_SACH" Association="Self.FK_DANHGIA_SACH">
+      <End Role="SACH" EntitySet="SACHes" />
+      <End Role="DANHGIA" EntitySet="DANHGIAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DANHGIA_USER" Association="Self.FK_DANHGIA_USER">
+      <End Role="USER" EntitySet="USERs" />
+      <End Role="DANHGIA" EntitySet="DANHGIAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DANHMUC_LOAISACH" Association="Self.FK_DANHMUC_LOAISACH">
+      <End Role="LOAISACH" EntitySet="LOAISACHes" />
+      <End Role="DANHMUC" EntitySet="DANHMUCs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_DANHMUC" Association="Self.FK_SACH_DANHMUC">
+      <End Role="DANHMUC" EntitySet="DANHMUCs" />
+      <End Role="SACH" EntitySet="SACHes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATHANG_NHACUNGCAP" Association="Self.FK_DONDATHANG_NHACUNGCAP">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATHANG_NHANVIEN" Association="Self.FK_DONDATHANG_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADON_DONDATHANG" Association="Self.FK_HOADON_DONDATHANG">
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADON_NHANVIEN" Association="Self.FK_HOADON_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONBANLE_NHANVIEN" Association="Self.FK_HOADONBANLE_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="HOADONBANLE" EntitySet="HOADONBANLEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONBANLE_USER" Association="Self.FK_HOADONBANLE_USER">
+      <End Role="USER" EntitySet="USERs" />
+      <End Role="HOADONBANLE" EntitySet="HOADONBANLEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHANVIEN_LOAINV" Association="Self.FK_NHANVIEN_LOAINV">
+      <End Role="LOAINV" EntitySet="LOAINVs" />
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_NHAXUATBAN" Association="Self.FK_SACH_NHAXUATBAN">
+      <End Role="NHAXUATBAN" EntitySet="NHAXUATBANs" />
+      <End Role="SACH" EntitySet="SACHes" />
+    </AssociationSet>
+    <AssociationSet Name="SACHTHUOCTACGIA" Association="Self.SACHTHUOCTACGIA">
+      <End Role="SACH" EntitySet="SACHes" />
+      <End Role="TACGIA" EntitySet="TACGIAs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

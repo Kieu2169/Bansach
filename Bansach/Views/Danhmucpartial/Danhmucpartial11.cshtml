@@ -1,0 +1,9 @@
+﻿@using Bansach.Models;
+@model List<DANHMUC>
+
+<ul>
+    @foreach (var item in Model.Take(5))
+    {
+        <li><a href="products.html">@item.Tendanhmuc</a></li>
+    }
+</ul>

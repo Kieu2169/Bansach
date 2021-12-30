@@ -17,10 +17,5 @@ namespace Bansach.Controllers
             var lstSachmoi = db.SACHes.Take(3).ToList();
             return PartialView(lstSachmoi);
         }
-        public PartialViewResult Loaisachpartial()
-        {
-            var lstSachmoi = db.LOAISACHes.ToList();
-            return PartialView(lstSachmoi);
-        }
     }
 }

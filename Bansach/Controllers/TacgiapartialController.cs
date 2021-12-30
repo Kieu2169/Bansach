@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Bansach.Controllers
 {
-    public class AuthorController : Controller
+    public class TacgiapartialController : Controller
     {
         Bán_SáchEntities db = new Bán_SáchEntities();
         // GET: Tacgiapartial

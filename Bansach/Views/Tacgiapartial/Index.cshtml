@@ -1,0 +1,10 @@
+﻿@using Bansach.Models;
+@model List<TACGIA>
+<ul>
+    @foreach (var item in Model.Take(5))
+    {
+        <li>
+            <a href="products.html">@item.Hoten</a>
+        </li>
+    }
+</ul>

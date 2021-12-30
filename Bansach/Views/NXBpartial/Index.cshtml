@@ -1,0 +1,11 @@
+﻿@using Bansach.Models;
+@model List<NHAXUATBAN>
+<ul>
+    @foreach (var item in Model.Take(5))
+    {
+        <li>
+            <a href="products.html">@item.Ten</a>
+        </li>
+    }
+</ul>
+

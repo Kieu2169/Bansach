@@ -7,14 +7,15 @@ using System.Web.Mvc;
 
 namespace Bansach.Controllers
 {
-    public class AuthorController : Controller
+    public class NXBpartialController : Controller
     {
         Bán_SáchEntities db = new Bán_SáchEntities();
         // GET: Tacgiapartial
         public ActionResult Index()
         {
-            var lsttacgia = db.TACGIAs.ToList();
-            return PartialView(lsttacgia);
+            var lstnxb = db.NHAXUATBANs.ToList();
+            return PartialView(lstnxb);
         }
+
     }
 }

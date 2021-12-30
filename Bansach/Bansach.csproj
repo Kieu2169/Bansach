@@ -154,9 +154,11 @@
     <Compile Include="Controllers\DanhmucpartialController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NXBpartialController.cs" />
     <Compile Include="Controllers\ProductdetailController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SachpartialController.cs" />
+    <Compile Include="Controllers\TacgiapartialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -554,6 +556,33 @@
     <Content Include="Content\images\products\img-05.jpg" />
     <Content Include="Content\images\products\img-06.jpg" />
     <Content Include="Content\images\products\img-07.jpg" />
+    <Content Include="Content\images\sach\1.jpg" />
+    <Content Include="Content\images\sach\2.jpg" />
+    <Content Include="Content\images\sach\281094_p78295mcaychuoimem.jpg" />
+    <Content Include="Content\images\sach\3.jpg" />
+    <Content Include="Content\images\sach\4.jpg" />
+    <Content Include="Content\images\sach\5.jpg" />
+    <Content Include="Content\images\sach\6.jpg" />
+    <Content Include="Content\images\sach\7.jpg" />
+    <Content Include="Content\images\Tacgia\1.jpg" />
+    <Content Include="Content\images\Tacgia\10.jpg" />
+    <Content Include="Content\images\Tacgia\11.jpg" />
+    <Content Include="Content\images\Tacgia\12.jpg" />
+    <Content Include="Content\images\Tacgia\13.jpg" />
+    <Content Include="Content\images\Tacgia\14.jpg" />
+    <Content Include="Content\images\Tacgia\15.jpg" />
+    <Content Include="Content\images\Tacgia\16.jpg" />
+    <Content Include="Content\images\Tacgia\17.jpg" />
+    <Content Include="Content\images\Tacgia\2.jpg" />
+    <Content Include="Content\images\Tacgia\24.jpg" />
+    <Content Include="Content\images\Tacgia\27.jpg" />
+    <Content Include="Content\images\Tacgia\3.jpg" />
+    <Content Include="Content\images\Tacgia\4.jpg" />
+    <Content Include="Content\images\Tacgia\5.jpg" />
+    <Content Include="Content\images\Tacgia\6.jpg" />
+    <Content Include="Content\images\Tacgia\7.jpg" />
+    <Content Include="Content\images\Tacgia\8.jpg" />
+    <Content Include="Content\images\Tacgia\9.jpg" />
     <Content Include="Content\images\team\img-01.jpg" />
     <Content Include="Content\images\team\img-02.jpg" />
     <Content Include="Content\images\team\img-03.jpg" />
@@ -729,8 +758,20 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Danhmucpartial\Danhmucpartial.cshtml" />
-    <Content Include="Views\Sachpartial\Loaisachpartial.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial1.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial2.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial4.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial5.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial6.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial7.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial8.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial9.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial10.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial11.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial12.cshtml" />
+    <Content Include="Views\Danhmucpartial\Danhmucpartial13.cshtml" />
+    <Content Include="Views\Tacgiapartial\Index.cshtml" />
+    <Content Include="Views\NXBpartial\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

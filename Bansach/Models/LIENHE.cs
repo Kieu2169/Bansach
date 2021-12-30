@@ -25,10 +25,9 @@ namespace Bansach.Models
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", ErrorMessage = "Email phải đúng định dạng X@X.X")]
         [Required(ErrorMessage = "Email không được để trống")]
         public string Email { get; set; }
-        [RegularExpression(@"[0-9]{3}-[0-9]{3}-[0-9]{4}")]
+        [RegularExpression(@"^((09(\d){8})|(086(\d){7})|(088(\d){7})|(089(\d){7})|(01(\d){9}))$")]
         [Required(ErrorMessage = "Số điện thoại không được để trống")]
         public string SDT { get; set; }
-        [Required(ErrorMessage = "Nội dung không được để trống")]
         public string Noidung { get; set; }
     }
 }

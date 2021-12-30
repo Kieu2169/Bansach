@@ -1,6 +1,7 @@
-﻿
+﻿@model Bansach.Models.LIENHE
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
@@ -19,16 +20,7 @@
         </div>
     </div>
 </div>
-<!--************************************
-        Inner Banner End
-*************************************-->
-<!--************************************
-        Main Start
-*************************************-->
 <main id="tg-main" class="tg-main tg-haslayout">
-    <!--************************************
-            Contact Us Start
-    *************************************-->
     <div class="tg-sectionspace tg-haslayout">
         <div class="container">
             <div class="row">
@@ -44,29 +36,55 @@
 
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <form class="tg-formtheme tg-formcontactus">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input type="text" name="first-name" class="form-control" placeholder="Họ">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal" style="margin-left:40px;">
+                            <h4>LIÊN HỆ</h4>
+                            <hr />
+                            @TempData["StatusMessage"]
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Ho, new { htmlAttributes = new { @class = "form-control", @placeholder = "Họ" } })
+                                    @Html.ValidationMessageFor(model => model.Ho, "", new { @class = "text-danger" })
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" name="last-name" class="form-control" placeholder="Tên">
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control", @placeholder = "Tên" } })
+                                    @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
-                                <div class="form-group">
-                                    <input type="number" name="phone" class="form-control" placeholder="Số điện thoại">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control", @placeholder = "Số điện thoại" } })
+                                    @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
                                 </div>
-                                <div class="form-group tg-hastextarea">
-                                    <textarea placeholder="Nội dung"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <textarea name="Noidung" id="Noidung" placeholder="Nội dung"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <button type="submit" class="tg-btn tg-active">Gửi</button>
-                                </div>
-                            </fieldset>
-                        </form>
-                        <div class="tg-contactdetail">
+                            </div>
+
+                            <div class="form-group">
+                                <button style="margin-left:17px;" type="submit" class="tg-btn tg-active">Gửi</button>
+                            </div>
+                        </div>
+                        }
+                        
+                        <div class="tg-contactdetail"  style="margin-left:40px;">
                             <div class="tg-sectionhead">
                                 <h2>Liên hệ với chúng tôi ngay nhé!</h2>
                             </div>
@@ -107,7 +125,4 @@
             </div>
         </div>
     </div>
-    <!--************************************
-            Contact Us End
-    *************************************-->
 </main>

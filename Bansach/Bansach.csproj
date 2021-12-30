@@ -751,7 +751,6 @@
     <Content Include="Views\Sachpartial\Sachmoipartial.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Productdetail\Index.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Authordetail\Index.cshtml" />
     <Content Include="Views\Author\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
@@ -772,6 +771,8 @@
     <Content Include="Views\Danhmucpartial\Danhmucpartial13.cshtml" />
     <Content Include="Views\Tacgiapartial\Index.cshtml" />
     <Content Include="Views\NXBpartial\Index.cshtml" />
+    <Content Include="Views\Author\partial_tacgia.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

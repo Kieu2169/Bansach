@@ -16,5 +16,10 @@ namespace Bansach.Controllers
             var lsttacgia = db.TACGIAs.ToList();
             return PartialView(lsttacgia);
         }
+        public ActionResult partial_tacgia()
+        {
+            var lstsach = db.SACHes.ToList();
+            return PartialView(lstsach);
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Bansach.Controllers
     public class ContactController : Controller
     {
         private Bán_SáchEntities db = new Bán_SáchEntities();
-
+        
         // GET: Contact/Create
         public ActionResult Create()
         {

@@ -206,6 +206,9 @@
     <Property Name="Thoigiandang" Type="date" />
     <Property Name="Noidungtomtat" Type="nvarchar(max)" />
     <Property Name="Hinhanh" Type="nchar" MaxLength="20" />
+    <Property Name="Vietboi" Type="nvarchar" MaxLength="70" />
+    <Property Name="Soluotxem" Type="nchar" MaxLength="20" />
+    <Property Name="Tieudengan" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="USER">
     <Key>

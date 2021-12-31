@@ -173,14 +173,14 @@
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\AuthordetailController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\home_partial\TintucpartialController.cs" />
     <Compile Include="Controllers\main_partial\DanhmucpartialController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\main_partial\EmailpartialController.cs" />
-    <Compile Include="Controllers\main_partial\LController.cs" />
     <Compile Include="Controllers\main_partial\NXBpartialController.cs" />
     <Compile Include="Controllers\ProductdetailController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\main_partial\SachpartialController.cs" />
+    <Compile Include="Controllers\home_partial\SachpartialController.cs" />
     <Compile Include="Controllers\main_partial\TacgiapartialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -611,6 +611,12 @@
     <Content Include="Content\images\team\img-03.jpg" />
     <Content Include="Content\images\team\img-04.jpg" />
     <Content Include="Content\images\team\img-05.jpg" />
+    <Content Include="Content\images\tintuc\1.png" />
+    <Content Include="Content\images\tintuc\2.png" />
+    <Content Include="Content\images\tintuc\3.png" />
+    <Content Include="Content\images\tintuc\4.png" />
+    <Content Include="Content\images\tintuc\5.png" />
+    <Content Include="Content\images\tintuc\6.png" />
     <Content Include="Content\images\ui-icons_444444_256x240.html" />
     <Content Include="Content\images\ui-icons_555555_256x240.html" />
     <Content Include="Content\images\ui-icons_777620_256x240.html" />
@@ -735,6 +741,11 @@
     <Content Include="Areas\Admin\Views\CHITIETDATHANGs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\CHITIETDATHANGs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\CHITIETDATHANGs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\USERs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\USERs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\USERs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\USERs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\USERs\Index.cshtml" />
     <EntityDeploy Include="Models\Bansach.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Bansach.Designer.cs</LastGenOutput>
@@ -742,11 +753,6 @@
     <Content Include="Models\Bansach.edmx.diagram">
       <DependentUpon>Bansach.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\USERs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\USERs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\USERs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\USERs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\USERs\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -796,12 +802,8 @@
     <Content Include="Views\NXBpartial\Index.cshtml" />
     <Content Include="Views\Author\partial_tacgia.cshtml" />
     <Content Include="Views\Contact\Create.cshtml" />
-    <Content Include="Views\L\Create.cshtml" />
-    <Content Include="Views\L\Delete.cshtml" />
-    <Content Include="Views\L\Details.cshtml" />
-    <Content Include="Views\L\Edit.cshtml" />
-    <Content Include="Views\L\Index.cshtml" />
     <Content Include="Views\Emailpartial\Index.cshtml" />
+    <Content Include="Views\Tintucpartial\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

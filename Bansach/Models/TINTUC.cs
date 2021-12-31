@@ -19,5 +19,8 @@ namespace Bansach.Models
         public Nullable<System.DateTime> Thoigiandang { get; set; }
         public string Noidungtomtat { get; set; }
         public string Hinhanh { get; set; }
+        public string Vietboi { get; set; }
+        public string Soluotxem { get; set; }
+        public string Tieudengan { get; set; }
     }
 }

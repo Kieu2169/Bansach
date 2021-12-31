@@ -1,0 +1,22 @@
+﻿@using Bansach.Models;
+@model List<TINTUC>
+
+@foreach (var item in Model)
+{
+    <article class="item tg-post">
+        <figure><a href="javascript:void(0);"><img style="height:223px;" src="~/Content/images/tintuc/@item.Hinhanh" alt="image description"></a></figure>
+        <div class="tg-postcontent">
+           <ul class="tg-bookscategories">
+                
+            </ul>
+            <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+            <div class="tg-posttitle">
+                <h3><a href="javascript:void(0);">@item.Tieudengan</a></h3>
+            </div>
+            <span class="tg-bookwriter">By: <a href="javascript:void(0);">@item.Vietboi</a></span>
+            <ul class="tg-postmetadata">
+                <li><a href="javascript:void(0);"><i class="fa fa-eye"></i><i>@item.Soluotxem Views</i></a></li>
+            </ul>
+        </div>
+    </article>
+}

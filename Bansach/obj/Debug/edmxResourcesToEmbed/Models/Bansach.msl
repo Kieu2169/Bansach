@@ -212,6 +212,9 @@
           <ScalarProperty Name="Thoigiandang" ColumnName="Thoigiandang" />
           <ScalarProperty Name="Noidungtomtat" ColumnName="Noidungtomtat" />
           <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+          <ScalarProperty Name="Vietboi" ColumnName="Vietboi" />
+          <ScalarProperty Name="Soluotxem" ColumnName="Soluotxem" />
+          <ScalarProperty Name="Tieudengan" ColumnName="Tieudengan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

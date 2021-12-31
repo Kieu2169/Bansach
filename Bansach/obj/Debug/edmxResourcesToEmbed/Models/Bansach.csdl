@@ -234,6 +234,9 @@
     <Property Name="Thoigiandang" Type="DateTime" Precision="0" />
     <Property Name="Noidungtomtat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Hinhanh" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Vietboi" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Soluotxem" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Tieudengan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="USER">
     <Key>

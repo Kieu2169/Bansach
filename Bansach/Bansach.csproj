@@ -158,7 +158,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CHITIETDATHANGsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\DANHGIAsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DANHMUCsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DONDATHANGsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HOADONBANLEsController.cs" />
@@ -173,6 +172,7 @@
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\AuthordetailController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\home_partial\sachbanchaypartialController.cs" />
     <Compile Include="Controllers\home_partial\TintucpartialController.cs" />
     <Compile Include="Controllers\main_partial\DanhmucpartialController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -716,11 +716,6 @@
     <Content Include="Areas\Admin\Views\HOADONs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\HOADONs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\HOADONs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\DANHGIAs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\DANHGIAs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\DANHGIAs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\DANHGIAs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\DANHGIAs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\NHANVIENs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\NHANVIENs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\NHANVIENs\Details.cshtml" />
@@ -804,6 +799,7 @@
     <Content Include="Views\Contact\Create.cshtml" />
     <Content Include="Views\Emailpartial\Index.cshtml" />
     <Content Include="Views\Tintucpartial\Index.cshtml" />
+    <Content Include="Views\sachbanchaypartial\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

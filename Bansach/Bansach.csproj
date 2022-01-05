@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\AuthordetailController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\detailsach_partial\danhmuc_partialController.cs" />
     <Compile Include="Controllers\home_partial\sachbanchaypartialController.cs" />
     <Compile Include="Controllers\home_partial\TintucpartialController.cs" />
     <Compile Include="Controllers\main_partial\DanhmucpartialController.cs" />
@@ -774,7 +775,6 @@
     <Content Include="Views\Shared\_MainLayout.cshtml" />
     <Content Include="Views\Sachpartial\Sachmoipartial.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Productdetail\Index.cshtml" />
     <Content Include="Views\Authordetail\Index.cshtml" />
     <Content Include="Views\Author\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
@@ -800,6 +800,8 @@
     <Content Include="Views\Emailpartial\Index.cshtml" />
     <Content Include="Views\Tintucpartial\Index.cshtml" />
     <Content Include="Views\sachbanchaypartial\Index.cshtml" />
+    <Content Include="Views\danhmuc_partial\Index.cshtml" />
+    <Content Include="Views\Productdetail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

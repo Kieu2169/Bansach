@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bansach.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,12 @@ namespace Bansach.Controllers
 {
     public class ProductdetailController : Controller
     {
+        Bán_SáchEntities db = new Bán_SáchEntities();
         // GET: Productdetail
-        public ActionResult Index()
+        public ActionResult Index(int? Id)
         {
-            return View();
+            var lstsach = db.SACHes.Where(n => n.Idsach == Id).FirstOrDefault();
+            return View(lstsach);
         }
     }
 }

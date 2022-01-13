@@ -13,8 +13,8 @@ namespace Bansach.Controllers
         // GET: Productdetail
         public ActionResult Index(int? Id)
         {
-            var lstsach = db.SACHes.Where(n => n.Idsach == Id).FirstOrDefault();
-            return View(lstsach);
+            var sach = db.SACHes.Where(n => n.Idsach == Id).FirstOrDefault();
+            return View(sach);
         }
     }
 }

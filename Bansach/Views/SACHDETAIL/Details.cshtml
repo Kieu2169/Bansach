@@ -1,37 +1,9 @@
 ﻿@model Bansach.Models.SACH
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-        $(function () {
-            $("#addtocart").click(function () {
-                var model = {};
-                //lấy id sản phẩm
-                //model.Id = @Model.Idsach;
-                // lấy số lượng đặt hàng
-                model.Quantity = $("#ipQuantity").val();
-                debugger;
-                $.ajax({
-                    type: "POST",
-                    url: '@Url.Action("AddToCart", "Cart")',
-                    data:  JSON.stringify(model) ,
-                    dataType: "json",
-                    contentType: "application/json; charset=utf-8",
-                    success: function () {
-                        alert("Thêm giỏ hàng thành công!")
-                        $('#CartCount').text(@Session["count"] + 1);
-                    },
-                    error: function () {
-                        alert("Lỗi trong khi thêm vào giỏ hàng!");
-                    }
-                });
-                return false;
-            });
-        });
-    </script>
 
 <div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Content/images/parallax/bgparallax-07.jpg">
     <div class="container">
@@ -707,4 +679,5 @@
             News Grid End
     *************************************-->
 </main>
+
 

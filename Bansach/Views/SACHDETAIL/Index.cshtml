@@ -1,5 +1,4 @@
-﻿@using Bansach.Models;
-@model List<SACH>
+﻿@model IEnumerable<Bansach.Models.SACH>
 
 @foreach (var item in Model)
 {
@@ -7,7 +6,7 @@
         <div class="tg-postbook">
             <figure class="tg-featureimg">
                 <div class="tg-bookimg">
-                    <div class="tg-frontcover"><img  style="height:280px" src="~/Content/images/sach/@item.Hinhanh" alt="image description"></div>
+                    <div class="tg-frontcover"><img style="height:280px" src="~/Content/images/sach/@item.Hinhanh" alt="image description"></div>
                     <div class="tg-backcover"><img src="~/Content/images/books/img-01.jpg" alt="image description"></div>
                 </div>
                 <a class="tg-btnaddtowishlist" href="">
@@ -17,7 +16,6 @@
             </figure>
             <div class="tg-postbookcontent">
                 <ul class="tg-bookscategories">
-                   
                 </ul>
                 <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
                 <div class="tg-booktitle">

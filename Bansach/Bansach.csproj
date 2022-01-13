@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\AuthordetailController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\detailsach_partial\danhmuc_partialController.cs" />
     <Compile Include="Controllers\home_partial\sachbanchaypartialController.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\home_partial\SachpartialController.cs" />
     <Compile Include="Controllers\main_partial\TacgiapartialController.cs" />
+    <Compile Include="Controllers\SACHDETAILController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +204,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Bansach.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\CHITIETDATHANG.cs">
       <DependentUpon>Bansach.tt</DependentUpon>
     </Compile>
@@ -802,6 +805,12 @@
     <Content Include="Views\sachbanchaypartial\Index.cshtml" />
     <Content Include="Views\danhmuc_partial\Index.cshtml" />
     <Content Include="Views\Productdetail\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\SACHDETAIL\Create.cshtml" />
+    <Content Include="Views\SACHDETAIL\Delete.cshtml" />
+    <Content Include="Views\SACHDETAIL\Details.cshtml" />
+    <Content Include="Views\SACHDETAIL\Edit.cshtml" />
+    <Content Include="Views\SACHDETAIL\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

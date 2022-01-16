@@ -1,21 +1,59 @@
-﻿using Bansach.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Bansach.Models;
 
-namespace Bansach.Controllers
+namespace Bansach.Controllers.home_partial
 {
-    public class SachpartialController : Controller
+    public class sachpartialController : Controller
     {
-        Bán_SáchEntities db = new Bán_SáchEntities();
+        private Bán_SáchEntities db = new Bán_SáchEntities();
 
-        // GET: Sach
-        public PartialViewResult Sachmoipartial()
+        // GET: sachpartial
+        public ActionResult Index()
         {
-            var lstSachmoi = db.SACHes.Take(3).ToList();
-            return PartialView(lstSachmoi);
+            var sACHes = db.SACHes.Include(s => s.DANHMUC).Include(s => s.NHAXUATBAN).Take(7);
+            return PartialView(sACHes.ToList());
+        }
+
+        public ActionResult sachdexuat()
+        {
+            var sACHes = db.SACHes.Include(s => s.DANHMUC).Include(s => s.NHAXUATBAN).Take(3);
+            return PartialView(sACHes.ToList());
+        }
+        public ActionResult sachlienquan()
+        {
+            var sACHes = db.SACHes.Include(s => s.DANHMUC).Include(s => s.NHAXUATBAN).Take(4);
+            return PartialView(sACHes.ToList());
+        }
+        // GET: sachpartial/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            SACH sACH = db.SACHes.Find(id);
+            if (sACH == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sACH);
+        }
+
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

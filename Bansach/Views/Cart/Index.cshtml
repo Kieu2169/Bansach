@@ -1,171 +1,239 @@
-﻿
-@{ ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_MainLayout.cshtml"; }
-<!DOCTYPE html>
-<html lang="en">
+﻿@model IEnumerable<Bansach.Models.CartModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
 <head>
+    <title>Footwear - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
-    <title>cart container - Bootdey.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="~/order/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="~/order/css/icomoon.css">
+    <!-- Ion Icon Fonts-->
+    <link rel="stylesheet" href="~/order/css/ionicons.min.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="~/order/css/bootstrap.min.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="~/order/css/magnific-popup.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="~/order/css/flexslider.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="~/order/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/order/css/owl.theme.default.min.css">
+
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="~/order/css/bootstrap-datepicker.css">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="~/order/fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="~/order/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+                $(function () {
+                    $("#removecart").click(function () {
+                        var model = {};
+                        //lấy id sản phẩm
+                        model.Id = $("#sachid").val();
+                        $.ajax({
+                            type: "POST",
+                            url: '@Url.Action("Remove", "Cart")',
+                            data:  JSON.stringify(model) ,
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                            success: function () {
+                                $('#CartCount').text(@Session["count"] - 1);
+                                $("#sach-" + model.Id).remove();
+                            },
+                            error: function () {
+                                alert("Lỗi trong khi thêm vào giỏ hàng!");
+                            }
+                        });
+                        return false;
+                    });
+                });
+    </script>
 </head>
-<body>
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+
+
+<div class="breadcrumbs">
     <div class="container">
-        <div class="contentbar">
-            <!-- Start row -->
-            <div class="row">
-                <!-- Start col -->
-                <div class="col-md-12 col-lg-12 col-xl-12">
-                    <div class="card m-b-30" style="margin-top:65px !important">
-                        <div class="card-header">
-                            <h1 class="card-title" style="display:flex; justify-content:center" ><strong>Giỏ hàng của bạn</strong></h1>
+        <div class="row">
+            <div class="col">
+                <p class="bread"><span><a href="index.html" style="color: #77b748;">Trang chủ</a></span> / <span>Giỏ hàng</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="colorlib-product">
+    <div class="container">
+        <div class="row row-pb-lg">
+            <div class="col-md-10 offset-md-1">
+                <div class="process-wrap">
+                    <div class="process text-center active">
+                        <p><span style="color: #77b748;">01</span></p>
+                        <h3>Giỏ hàng</h3>
+                    </div>
+                    <div class="process text-center">
+                        <p><span>02</span></p>
+                        <h3>Thanh toán</h3>
+                    </div>
+                    <div class="process text-center">
+                        <p><span>03</span></p>
+                        <h3>Hoàn thành</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (Model != null)
+        {
+            <div class="row row-pb-lg">
+                <div class="col-md-12">
+                    <div class="product-name d-flex" style="background-color: #9bd174;">
+                        <div class="one-eight text-center">
+                            <span>Hình ảnh</span>
                         </div>
-                        <div class="card-body">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-10 col-xl-8">
-                                    <div class="cart-container">
-                                        <div class="cart-head">
-                                            <div class="table-responsive">
-                                                <table class="table table-borderless">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col"></th>
-                                                            <th scope="col"></th>
-                                                            <th scope="col">Hình ảnh</th>
-                                                            <th scope="col">Tên sách</th>
-                                                            <th scope="col">Số lượng</th>
-                                                            <th scope="col">Giá</th>
-                                                            <th scope="col" class="text-right">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="row">1</th>
-                                                            <td><a href="#" class="text-danger"><i class="ri-delete-bin-3-line"></i></a></td>
-                                                            <td><img src="https://themesbox.in/admin-templates/olian/html/light-vertical/assets/images/ecommerce/product_01.svg" class="img-fluid" width="35" alt="product"></td>
-                                                            <td>Apple Watch</td>
-                                                            <td>
-                                                                <div class="form-group mb-0">
-                                                                    <input type="number" class="form-control cart-qty" name="cartQty1" id="cartQty1" value="1"  min="1" max="42" pattern="[3-9]|[1-3][0-9]|4[0-2]">
-                                                                </div>
-                                                            </td>
-                                                            <td>$10</td>
-                                                            <td class="text-right">$500</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">2</th>
-                                                            <td><a href="#" class="text-danger"><i class="ri-delete-bin-3-line"></i></a></td>
-                                                            <td><img src="https://themesbox.in/admin-templates/olian/html/light-vertical/assets/images/ecommerce/product_02.svg" class="img-fluid" width="35" alt="product"></td>
-                                                            <td>Apple iPhone</td>
-                                                            <td>
-                                                                <div class="form-group mb-0">
-                                                                    <input type="number" class="form-control cart-qty" name="cartQty2" id="cartQty2" value="1">
-                                                                </div>
-                                                            </td>
-                                                            <td>$20</td>
-                                                            <td class="text-right">$200</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">3</th>
-                                                            <td><a href="#" class="text-danger"><i class="ri-delete-bin-3-line"></i></a></td>
-                                                            <td><img src="https://themesbox.in/admin-templates/olian/html/light-vertical/assets/images/ecommerce/product_03.svg" class="img-fluid" width="35" alt="product"></td>
-                                                            <td>Apple iPad</td>
-                                                            <td>
-                                                                <div class="form-group mb-0">
-                                                                    <input type="number" class="form-control cart-qty" name="cartQty3" id="cartQty3" value="1">
-                                                                </div>
-                                                            </td>
-                                                            <td>$30</td>
-                                                            <td class="text-right">$300</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                        <div class="one-forth text-left px-4">
+                            <span style="margin-left: 100px;">Tên sách</span>
+                        </div>
+                        <div class="one-eight text-center">
+                            <span>Giá</span>
+                        </div>
+                        <div class="one-eight text-center">
+                            <span>Số lượng</span>
+                        </div>
+                        <div class="one-eight text-center">
+                            <span>Tổng cộng</span>
+                        </div>
+                        <div class="one-eight text-center px-4">
+                            <span>Xóa</span>
+                        </div>
+                    </div>
+                    @foreach (var item in Model)
+                    {
+                        <div class="product-cart d-flex" id="sach-@item.sach.Idsach">
+                            <input type="hidden" value="@item.sach.Idsach" id="sachid" />
+                            <div class="one-eight text-center">
+                                <div class="display-tc">
+                                    <img src="~/Content/images/sach/@item.sach.Hinhanh" class="img-fluid" width="35" alt="product">
+                                </div>
+                            </div>
+                            <div class="one-forth">
+                                <div class="product-img" style="background-image: url(~/order/images/item-8.jpg);">
+                                </div>
+                                <div class="display-tc">
+                                    <h3>@item.sach.Tuasach</h3>
+                                </div>
+                            </div>
+                            <div class="one-eight text-center">
+                                <div class="display-tc">
+                                    <span class="price">@item.sach.Giaban</span>
+                                </div>
+                            </div>
+                            <div class="one-eight text-center">
+                                <div class="display-tc">
+                                    <input type="number" class="form-control cart-qty" name="cartQty1" id="cartQty1" value="@item.Quantity">
+                                </div>
+                            </div>
+                            <div class="one-eight text-center">
+                                <div class="display-tc">
+                                    <span class="price">$120.00</span>
+                                </div>
+                            </div>
+                            <div class="one-eight text-center">
+                                <div class="display-tc">
+                                    <a id="removecart" href="#" class="closed"></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="row row-pb-lg">
+                <div class="col-md-12">
+                    <div class="total-wrap">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <form action="#">
+                                    <div class="row form-group">
+                                        <div class="col-sm-9">
+                                            <input type="text" name="quantity" class="form-control input-number" placeholder="Nhập mã giảm giá của bạn">
                                         </div>
-                                        <div class="cart-body">
-                                            <div class="row">
-                                                <div class="col-md-12 order-2 order-lg-1 col-lg-5 col-xl-6">
-                                                    <div class="order-note">
-                                                        <form>
-                                                            <div class="form-group">
-                                                                <div class="input-group">
-                                                                    <input type="search" class="form-control" placeholder="Mã giảm giá" aria-label="Search" aria-describedby="button-addonTags">
-                                                                    <div class="input-group-append">
-                                                                        <button class="input-group-text" type="submit" id="button-addonTags" style="font-size:16px;">Áp dụng</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="specialNotes">Lưu ý đặc biệt cho đơn đặt hàng này:</label>
-                                                                <textarea class="form-control" name="specialNotes" id="specialNotes" rows="3" placeholder="Nhập nội dung"  style="font-size:16px;"></textarea>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 order-1 order-lg-2 col-lg-7 col-xl-6">
-                                                    <div class="order-total table-responsive ">
-                                                        <table class="table table-borderless text-right">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Tạm tính :</td>
-                                                                    <td>$1000.00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Phí ship :</td>
-                                                                    <td>$0.00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="f-w-7 font-18"><h4>Tổng cộng :</h4></td>
-                                                                    <td class="f-w-7 font-18"><h4>$1180.00</h4></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="cart-footer text-right">
-                                            <button type="button" class="btn btn-info my-1"  style="font-size:16px;"><i class="ri-save-line mr-2"></i>Cập nhật giỏ hàng</button>
-                                            <a href="page-checkout.html" class="btn btn-success my-1"  style="font-size:16px;">Tiến hành kiểm tra<i class="ri-arrow-right-line ml-2"></i></a>
-                                        </div>
+                                        <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);" style="margin-top:1px;">
+                                            @*<i class="fa fa-shopping-basket"></i>*@
+                                            <em>Áp dụng</em>
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <div class="total">
+                                    <div class="sub">
+                                        <p><span>Tạm tính:</span> <span>$200.00</span></p>
+                                        <p><span>Phí ship:</span> <span>$0.00</span></p>
+                                        <p><span>Giảm giá:</span> <span>$45.00</span></p>
+                                    </div>
+                                    <div class="grand-total">
+                                        <p><span><strong>Tổng cộng:</strong></span> <span>$450.00</span></p>
                                     </div>
                                 </div>
+                                <a class="tg-btn tg-btnstyletwo" href="@Url.Action("Index","payment")" style="margin-top: 15px; margin-left: 200px;">
+                                    @*<i class="fa fa-shopping-basket"></i>*@
+                                    <em>Thanh toán</em>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- End col -->
             </div>
-            <!-- End row -->
+        }
+        else
+        {
+            <h1 style="display:flex; justify-content: center; margin-bottom:25px;">Không có sản phẩm trong giỏ hàng!</h1>
+        }
+        <hr />
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
+                <h1>SÁCH LIÊN QUAN</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            @Html.Action("sachlienquan", "sachpartial")
         </div>
     </div>
-
-    <style type="text/css">
-        body {
-            background: #f4f5f7;
-            margin-top: 20px;
-            font-size: 16px;
-        }
-
-        .cart-container {
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            padding: 30px;
-        }
-
-            .cart-container .cart-body {
-                border-top: 1px solid rgba(0, 0, 0, 0.05);
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-                padding: 30px 0 20px;
-                margin: 20px 0 30px;
-            }
-    </style>
-
-    <script type="text/javascript">
-
-    </script>
-</body>
-</html>
+</div>
+<!-- jQuery -->
+<script src="~/order/js/jquery.min.js"></script>
+<!-- popper -->
+<script src="~/order/js/popper.min.js"></script>
+<!-- bootstrap 4.1 -->
+<script src="~/order/js/bootstrap.min.js"></script>
+<!-- jQuery easing -->
+<script src="~/order/js/jquery.easing.1.3.js"></script>
+<!-- Waypoints -->
+<script src="~/order/js/jquery.waypoints.min.js"></script>
+<!-- Flexslider -->
+<script src="~/order/js/jquery.flexslider-min.js"></script>
+<!-- Owl carousel -->
+<script src="~/order/js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="~/order/js/jquery.magnific-popup.min.js"></script>
+<script src="~/order/js/magnific-popup-options.js"></script>
+<!-- Date Picker -->
+<script src="~/order/js/bootstrap-datepicker.js"></script>
+<!-- Stellar Parallax -->
+<script src="~/order/js/jquery.stellar.min.js"></script>
+<!-- Main -->
+<script src="~/order/js/main.js"></script>

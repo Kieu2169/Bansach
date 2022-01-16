@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<head>
+    <title>Footwear - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="~/order/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="~/order/css/icomoon.css">
+    <!-- Ion Icon Fonts-->
+    <link rel="stylesheet" href="~/order/css/ionicons.min.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="~/order/css/bootstrap.min.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="~/order/css/magnific-popup.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="~/order/css/flexslider.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="~/order/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/order/css/owl.theme.default.min.css">
+
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="~/order/css/bootstrap-datepicker.css">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="~/order/fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="~/order/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+                $(function () {
+                    $("#removecart").click(function () {
+                        var model = {};
+                        //lấy id sản phẩm
+                        model.Id = $("#sachid").val();
+                        $.ajax({
+                            type: "POST",
+                            url: '@Url.Action("Remove", "Cart")',
+                            data:  JSON.stringify(model) ,
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                            success: function () {
+                                $('#CartCount').text(@Session["count"] - 1);
+                                $("#sach-" + model.Id).remove();
+                            },
+                            error: function () {
+                                alert("Lỗi trong khi thêm vào giỏ hàng!");
+                            }
+                        });
+                        return false;
+                    });
+                });
+    </script>
+</head>
+
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="bread"><span><a href="index.html" style="color: #77b748;">Trang chủ</a></span> / <span>Thanh toán thành công</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="colorlib-product">
+    <div class="container">
+        <div class="row row-pb-lg">
+            <div class="col-sm-10 offset-md-1">
+                <div class="process-wrap">
+                    <div class="process text-center active">
+                        <p><span style="color: #77b748;">01</span></p>
+                        <h3>Giỏ hàng</h3>
+                    </div>
+                    <div class="process text-center active">
+                        <p><span style="color: #77b748;">02</span></p>
+                        <h3>Thanh toán</h3>
+                    </div>
+                    <div class="process text-center active">
+                        <p><span style="color: #77b748;">03</span></p>
+                        <h3>Hoàn thành</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 offset-sm-1 text-center">
+                <p class="icon-addcart"><span><i style="color: #77b748;" class="icon-check"></i></span></p>
+                <h2 class="mb-4">Cảm ơn bạn đã mua hàng, đơn đặt hàng của bạn đã hoàn tất</h2>
+                <p>
+                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);" style="margin-top:1px;">
+                       
+                            <em>Tiếp tục mua sắm</em>
+                    </a>
+                    @*<a href="index.html" class="btn btn-primary btn-outline-primary">Home</a>
+        <a href="shop.html" class="btn btn-primary btn-outline-primary"><i class="icon-shopping-cart"></i> Continue Shopping</a>*@
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="~/order/js/jquery.min.js"></script>
+<!-- popper -->
+<script src="~/order/js/popper.min.js"></script>
+<!-- bootstrap 4.1 -->
+<script src="~/order/js/bootstrap.min.js"></script>
+<!-- jQuery easing -->
+<script src="~/order/js/jquery.easing.1.3.js"></script>
+<!-- Waypoints -->
+<script src="~/order/js/jquery.waypoints.min.js"></script>
+<!-- Flexslider -->
+<script src="~/order/js/jquery.flexslider-min.js"></script>
+<!-- Owl carousel -->
+<script src="~/order/js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="~/order/js/jquery.magnific-popup.min.js"></script>
+<script src="~/order/js/magnific-popup-options.js"></script>
+<!-- Date Picker -->
+<script src="~/order/js/bootstrap-datepicker.js"></script>
+<!-- Stellar Parallax -->
+<script src="~/order/js/jquery.stellar.min.js"></script>
+<!-- Main -->
+<script src="~/order/js/main.js"></script>

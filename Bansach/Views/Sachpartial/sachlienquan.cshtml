@@ -1,0 +1,17 @@
+﻿@using Bansach.Models;
+@model List<SACH>
+@foreach (var item in Model)
+{
+    <div class="col-md-3 col-lg-3 mb-4 text-center">
+        <div class="product-entry border">
+            <a href="@Url.Action("Details","sachpartial", new { Id = item.Idsach})" class="prod-img">
+                <img style="height:330px; width:253px;" src="~/Content/images/sach/@item.Hinhanh" class="img-fluid" alt="Free html5 bootstrap 4 template">
+            </a>
+            <div class="desc">
+                <h2><a href="@Url.Action("Details","sachpartial", new { Id = item.Idsach})">@item.Tuasach</a></h2>
+                <span class="price">@item.Giaban</span>
+            </div>
+        </div>
+    </div>
+}
+
